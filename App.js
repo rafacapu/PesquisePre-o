@@ -61,20 +61,7 @@ export default class App extends Component {
     );
   }
 
-  _handlePressUrl = () => {
-    Alert.alert(
-      'Open this URL?',
-      this.state.lastScannedUrl,
-      [
-        {
-          text: 'Yes',
-          onPress: () => Linking.openURL(this.state.lastScannedUrl),
-        },
-        { text: 'No', onPress: () => {} },
-      ],
-      { cancellable: false }
-    );
-  };
+  
 
   _handlePressCancel = () => {
     this.setState({ lastScannedUrl: null });
@@ -100,13 +87,25 @@ export default class App extends Component {
           </Text>
         </TouchableOpacity>
         <Button
-         title="Go to Details"
+         title="produto"
          onPress={() => this.props.navigation.navigate()}
        />
       </View>
     );
   };
 }
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+}
+
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
